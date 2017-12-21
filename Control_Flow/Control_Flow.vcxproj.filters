@@ -32,5 +32,8 @@
     <ClCompile Include="Control_Flow.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="BinSearch.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
