@@ -35,5 +35,11 @@
     <ClCompile Include="BinSearch.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="BinSearchVer2.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Exercise3_1.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

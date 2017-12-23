@@ -148,7 +148,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BinSearch.c" />
+    <ClCompile Include="BinSearchVer2.c" />
     <ClCompile Include="Control_Flow.cpp" />
+    <ClCompile Include="Exercise3_1.c" />
     <ClCompile Include="stdafx.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
