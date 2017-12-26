@@ -5,12 +5,15 @@
 #include "BinSearch.c"
 #include "BinSearchVer2.c"
 #include "Exercise3_1.c"
+#include "Exercise3_2.c"
 
 #include <time.h>
 
 int binSearch(int x, int v[], int n);
 int binSearchVer2(int x, int v[], int low, int high);
 int binSearchVer3(int x, int v[], int n);
+void escape(char s[], char t[]);
+void invisibleEscape(char s[], char t[]);
 
 int myArray[] = {1,3,6,9,12,17,20,22,25,30,58,64,98,100,110,120,130,150};
 
@@ -30,8 +33,60 @@ int main()
 	
 	//measureTimeCPUUsedVer1();
 	//measureTimeCPUUsedVer2();
-	measureTimeCPUUsedVer3();
+	//measureTimeCPUUsedVer3();
 	/* -------------------------------------------- */
+
+	/* ------------- Switch -------------------- */
+	// Counting digits, white space, others
+	/*int c, i, nWhite, nOther, nDigits[10], countDigits = 0;
+
+	nWhite = nOther = 0;
+	for (int index = 0; index < 10; index++) {
+		nDigits[index] = 0;
+	}
+
+	while ((c = getchar()) != EOF) {
+		switch (c) {
+		case '0': case '1': case '2': case '3': case '4': case '5':
+		case '6': case '7': case '8': case '9':
+			nDigits[c - '0']++;
+			break;
+		case '\n':
+		case '\t':
+		case ' ':
+			nWhite++;
+			break;
+		default:
+			nOther++;
+			break;
+		}
+	}
+
+	for (int j = 0; j < 10; ++j) {
+		if (nDigits[j] != 0) {
+			countDigits = countDigits + nDigits[j];
+		}
+		else {
+			continue;
+		}
+	}
+
+	printf("Total digits: %d\n", countDigits);
+	printf("Total white space: %d\n", nWhite);
+	printf("Total other : %d\n", nOther);*/
+
+	/*char t[] = "abcd\t\tabcd\nabc";
+	char s[20];
+	for (int i = 0; i < 20; i++) {
+		s[i] = '\0';
+	}
+	//escape(s, t);
+	invisibleEscape(s, t);*/
+	/* ----------------------------------------- */
+
+	/* ------------- Loops while and for--------- */
+
+	/* ------------------------------------------ */
 
     return 0;
 }
