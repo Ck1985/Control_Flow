@@ -6,8 +6,10 @@
 #include "BinSearchVer2.c"
 #include "Exercise3_1.c"
 #include "Exercise3_2.c"
+#include "SellSortAlgorithm.c"
 
 #include <time.h>
+#include <ctype.h>
 
 int binSearch(int x, int v[], int n);
 int binSearchVer2(int x, int v[], int low, int high);
@@ -20,6 +22,8 @@ int myArray[] = {1,3,6,9,12,17,20,22,25,30,58,64,98,100,110,120,130,150};
 int measureTimeCPUUsedVer1();
 int measureTimeCPUUsedVer2();
 int measureTimeCPUUsedVer3();
+int atoi(char s[]);
+void sellsort(char v[], int n);
 
 int main()
 {
@@ -85,6 +89,8 @@ int main()
 	/* ----------------------------------------- */
 
 	/* ------------- Loops while and for--------- */
+	//atoi(char s[]);
+
 
 	/* ------------------------------------------ */
 
@@ -137,5 +143,25 @@ int measureTimeCPUUsedVer3() {
 	total_time = ((double)(end_time - start_time)) / CLOCKS_PER_SEC;
 	printf("Total time has taken of CPUD (binSearchVer) is (seconds): %f\n", total_time);
 	return total_time;
+}
+
+/* Function atoi: Convert String s into Integer Version 2 */
+int atoi(char s[]) {
+	int i, n, sign;
+
+	for (i = 0; isspace(s[i]); ++i) {		// skip white spaces 
+		;
+	}
+
+	sign = (s[i] == '-') ? -1 : 1;
+
+	if (s[i] == '+' || s[i] == '-') {		// skip sign
+		i++;
+	}
+
+	for (n = 0; isdigit(s[i]); i++) {
+		n = 10 * n + (s[i] - '0');
+	}
+	return sign * n;
 }
 
