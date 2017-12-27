@@ -47,5 +47,8 @@
     <ClCompile Include="SellSortAlgorithm.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Exercise3_3.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

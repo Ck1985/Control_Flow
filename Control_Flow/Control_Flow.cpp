@@ -6,16 +6,24 @@
 #include "BinSearchVer2.c"
 #include "Exercise3_1.c"
 #include "Exercise3_2.c"
+#include "Exercise3_3.c"
 #include "SellSortAlgorithm.c"
+
+//#include<stdio.h>
+//#define MAXLINE 100
 
 #include <time.h>
 #include <ctype.h>
+#include <string.h>
 
 int binSearch(int x, int v[], int n);
 int binSearchVer2(int x, int v[], int low, int high);
 int binSearchVer3(int x, int v[], int n);
 void escape(char s[], char t[]);
 void invisibleEscape(char s[], char t[]);
+
+//int mgetline(char s[], int maxlimit);
+//void expand(char s1[], char s2[]);
 
 int myArray[] = {1,3,6,9,12,17,20,22,25,30,58,64,98,100,110,120,130,150};
 
@@ -24,6 +32,8 @@ int measureTimeCPUUsedVer2();
 int measureTimeCPUUsedVer3();
 int atoi(char s[]);
 void sellsort(char v[], int n);
+void reverse(char s[]);
+void expand(char s1[], char s2[]);
 
 int main()
 {
@@ -92,6 +102,21 @@ int main()
 	//atoi(char s[]);
 
 	//shellsort(char s[], int n);
+
+	/*char s1[MAXLINE], s2[MAXLINE];
+
+	mgetline(s1, MAXLINE);
+
+	expand(s1, s2);
+
+	printf("%s", s2);*/
+
+	char s1[] = "abc-ghj";
+	char s2[15];
+	for (int i = 0; i < 15; i++) {
+		s2[i] = '\0';
+	}
+	expand(s1, s2);
 	/* ------------------------------------------ */
 
     return 0;
@@ -164,4 +189,52 @@ int atoi(char s[]) {
 	}
 	return sign * n;
 }
+
+/* Function reverse: reverse string s in place */
+
+void reverse(char s[]) {
+	int i, j, c;
+
+	for (i = 0, j = strlen(s) - 1; i < j; i++, j--) {
+		/*c = s[j];
+		s[j] = s[i];
+		s[i] = c;*/
+
+		// Or
+		c = s[j], s[j] = s[i], s[i] = c;
+	}
+}
+
+// Source code
+/*int mgetline(char s[], int lim)
+{
+	int i, c;
+
+	for (i = 0; i<lim - 1 && (c = getchar()) != EOF && c != '\n'; ++i)
+		s[i] = c;
+
+	if (c == '\n')
+		s[i++] = c;
+
+	s[i] = '\0';
+}
+
+void expand(char s1[], char s2[])
+{
+	int i, j, c;
+
+	i = j = 0;
+
+	while ((c = s1[i++]) != '\0')
+		if (s1[i] == '-' && s1[i + 1] >= c)
+		{
+			i++;
+			while (c<s1[i])
+				s2[j++] = c++;
+		}
+		else
+			s2[j++] = c;
+
+	s2[j] = '\0';
+}*/
 
