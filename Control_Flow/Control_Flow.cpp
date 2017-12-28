@@ -1,6 +1,7 @@
 // Control_Flow.cpp : Defines the entry point for the console application.
 //
 
+#include <stdio.h>
 #include "stdafx.h"
 #include "BinSearch.c"
 #include "BinSearchVer2.c"
@@ -9,12 +10,11 @@
 #include "Exercise3_3.c"
 #include "SellSortAlgorithm.c"
 
-//#include<stdio.h>
-//#define MAXLINE 100
-
 #include <time.h>
 #include <ctype.h>
 #include <string.h>
+
+#define MAXLINE 100
 
 int binSearch(int x, int v[], int n);
 int binSearchVer2(int x, int v[], int low, int high);
@@ -111,9 +111,9 @@ int main()
 
 	printf("%s", s2);*/
 
-	char s1[] = "abc-ghj";
-	char s2[15];
-	for (int i = 0; i < 15; i++) {
+	char s1[] = "   &*^-xxxa-hxx0-7xxxA-Z0-9xxxa-f-g-e-r-fxxxxx";
+	char s2[MAXLINE];
+	for (int i = 0; i < MAXLINE; i++) {
 		s2[i] = '\0';
 	}
 	expand(s1, s2);
@@ -204,37 +204,3 @@ void reverse(char s[]) {
 		c = s[j], s[j] = s[i], s[i] = c;
 	}
 }
-
-// Source code
-/*int mgetline(char s[], int lim)
-{
-	int i, c;
-
-	for (i = 0; i<lim - 1 && (c = getchar()) != EOF && c != '\n'; ++i)
-		s[i] = c;
-
-	if (c == '\n')
-		s[i++] = c;
-
-	s[i] = '\0';
-}
-
-void expand(char s1[], char s2[])
-{
-	int i, j, c;
-
-	i = j = 0;
-
-	while ((c = s1[i++]) != '\0')
-		if (s1[i] == '-' && s1[i + 1] >= c)
-		{
-			i++;
-			while (c<s1[i])
-				s2[j++] = c++;
-		}
-		else
-			s2[j++] = c;
-
-	s2[j] = '\0';
-}*/
-
