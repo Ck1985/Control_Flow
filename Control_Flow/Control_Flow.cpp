@@ -111,12 +111,16 @@ int main()
 
 	printf("%s", s2);*/
 
-	char s1[] = "   &*^-xxxa-hxx0-7xxxA-Z0-9xxxa-f-g-e-r-fxxxxx";
+	/*char s1[] = "   &*^-xxxa-hxx0-7xxxA-Z0-9xxxa-f-g-e-r-fxxxxx";
 	char s2[MAXLINE];
 	for (int i = 0; i < MAXLINE; i++) {
 		s2[i] = '\0';
 	}
-	expand(s1, s2);
+	expand(s1, s2);*/
+	/* ------------------------------------------ */
+
+	/* ------------ Loop - Do while ------------- */
+
 	/* ------------------------------------------ */
 
     return 0;
