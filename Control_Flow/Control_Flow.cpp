@@ -8,11 +8,13 @@
 #include "Exercise3_1.c"
 #include "Exercise3_2.c"
 #include "Exercise3_3.c"
+#include "Exercise3_4.c"
 #include "SellSortAlgorithm.c"
 
 #include <time.h>
 #include <ctype.h>
 #include <string.h>
+#include <limits.h>
 
 #define MAXLINE 100
 
@@ -21,9 +23,6 @@ int binSearchVer2(int x, int v[], int low, int high);
 int binSearchVer3(int x, int v[], int n);
 void escape(char s[], char t[]);
 void invisibleEscape(char s[], char t[]);
-
-//int mgetline(char s[], int maxlimit);
-//void expand(char s1[], char s2[]);
 
 int myArray[] = {1,3,6,9,12,17,20,22,25,30,58,64,98,100,110,120,130,150};
 
@@ -34,6 +33,7 @@ int atoi(char s[]);
 void sellsort(char v[], int n);
 void reverse(char s[]);
 void expand(char s1[], char s2[]);
+void itoa(int n, char s[]);
 
 int main()
 {
@@ -120,6 +120,11 @@ int main()
 	/* ------------------------------------------ */
 
 	/* ------------ Loop - Do while ------------- */
+	char s[MAXLINE];
+	for (int i = 0; i < MAXLINE; ++i) {
+		s[i] = '\0';
+	}
+	itoa(-2147483648, s); // This version itoa Can not process the largest negative number 2^(32 - 1) why ?
 
 	/* ------------------------------------------ */
 
@@ -194,8 +199,27 @@ int atoi(char s[]) {
 	return sign * n;
 }
 
-/* Function reverse: reverse string s in place */
+/* Function itoa: Convert n to characters in s */
+void itoa(int n, char s[]) {
+	int i, sign;
 
+	if ((sign = n) < 0) {
+		n = -n;
+	}
+	i = 0;
+	do {
+		s[i++] = n % 10 + '0';
+	} while ((n = n / 10) > 0);
+	if (sign < 0) {
+		s[i++] = '-';
+	}
+	s[i] = '\0';
+	reverse(s);
+	
+	printf("%s\n", s);
+}
+
+/* Function reverse: reverse string s in place */
 void reverse(char s[]) {
 	int i, j, c;
 
