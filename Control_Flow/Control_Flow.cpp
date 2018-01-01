@@ -1,4 +1,4 @@
-// Control_Flow.cpp : Defines the entry point for the console application.
+﻿// Control_Flow.cpp : Defines the entry point for the console application.
 //
 
 #include <stdio.h>
@@ -9,6 +9,7 @@
 #include "Exercise3_2.c"
 #include "Exercise3_3.c"
 #include "Exercise3_4.c"
+#include "Exercise3_5.c"
 #include "SellSortAlgorithm.c"
 
 #include <time.h>
@@ -34,6 +35,9 @@ void sellsort(char v[], int n);
 void reverse(char s[]);
 void expand(char s1[], char s2[]);
 void itoa(int n, char s[]);
+void itoa_2(int n, char s[]);
+void convertBinary(int n, char s[]);
+void addOneBinary(char s[]);
 
 int main()
 {
@@ -124,8 +128,16 @@ int main()
 	for (int i = 0; i < MAXLINE; ++i) {
 		s[i] = '\0';
 	}
-	itoa(-2147483648, s); // This version itoa Can not process the largest negative number 2^(32 - 1) why ?
+	//char bin[] = "10010111001101011110110001011111";
+	/*itoa_2(-2147483648, s); // This version itoa Can not process the largest negative number 2^(32 - 1) why ?
+	itoa_2(-2147483645, s);*/
 
+	//convertBinary(2589765, s);
+	//addOneBinary(bin);
+	//printf("%s\n", bin);
+
+	convertBinary(-9867, s);
+	printf("%s\n", s);
 	/* ------------------------------------------ */
 
     return 0;
