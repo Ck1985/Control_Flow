@@ -37,7 +37,9 @@ void expand(char s1[], char s2[]);
 void itoa(int n, char s[]);
 void itoa_2(int n, char s[]);
 void convertBinary(int n, char s[]);
+void convertHexal(int n, char s[]);
 void addOneBinary(char s[]);
+void itob(int n, char s[], int b);
 
 int main()
 {
@@ -136,8 +138,9 @@ int main()
 	//addOneBinary(bin);
 	//printf("%s\n", bin);
 
-	convertBinary(-9867, s);
-	printf("%s\n", s);
+	itob(-875, s, 16);
+	//convertHexal(3987, s);
+	//printf("%s\n", s);
 	/* ------------------------------------------ */
 
     return 0;
