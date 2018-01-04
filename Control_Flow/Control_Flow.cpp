@@ -10,6 +10,7 @@
 #include "Exercise3_3.c"
 #include "Exercise3_4.c"
 #include "Exercise3_5.c"
+#include "Exercise3_6.c"
 #include "SellSortAlgorithm.c"
 
 #include <time.h>
@@ -40,6 +41,8 @@ void convertBinary(int n, char s[]);
 void convertHexal(int n, char s[]);
 void addOneBinary(char s[]);
 void itob(int n, char s[], int b);
+void itoa3_6(int n, char s[], int m);
+void reverse3_6(char s[]);
 
 int main()
 {
@@ -138,9 +141,11 @@ int main()
 	//addOneBinary(bin);
 	//printf("%s\n", bin);
 
-	itob(-875, s, 16);
+	//itob(-875, s, 16);
 	//convertHexal(3987, s);
 	//printf("%s\n", s);
+
+	itoa3_6(98745, s, 15);
 	/* ------------------------------------------ */
 
     return 0;
