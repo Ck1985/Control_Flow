@@ -45,6 +45,8 @@ void itoa3_6(int n, char s[], int m);
 void reverse3_6(char s[]);
 int trim(char s[]);
 void processNonNegative(int a[]);
+void determineCommon(int a[], int b[]);
+void determineCommonVer2(int a[], int b[]);
 
 int main()
 {
@@ -285,5 +287,38 @@ void processNonNegative(int a[]) {
 		else {
 			//do something ........
 		}
+	}
+}
+
+void determineCommon(int a[], int b[]) {
+	int lena, lenb;
+	for (int i = 0; i < lena; i++) {
+		for (int j = 0; j < lenb; j++) {
+			if (a[i] == b[j]) {
+				goto found;
+			}
+		}
+	}
+	//didn't find any elements in common .....
+found:
+	// got one: a[i] == b[j];
+	printf("******");
+}
+
+void determineCommonVer2(int a[], int b[]) {
+	int lena, lenb, found = 0;
+
+	for (int i = 0; i < lena && !found; i++) {
+		for (int j = 0; j < lenb && !found; j++) {
+			if (a[i] == b[j]) {
+				found = 1;
+			}
+		}
+	}
+	if (found) {
+		// got one a[i] == b[j];
+	}
+	else {
+		//didn't find any elements in commons .....
 	}
 }
