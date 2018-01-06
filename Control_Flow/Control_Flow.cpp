@@ -43,6 +43,8 @@ void addOneBinary(char s[]);
 void itob(int n, char s[], int b);
 void itoa3_6(int n, char s[], int m);
 void reverse3_6(char s[]);
+int trim(char s[]);
+void processNonNegative(int a[]);
 
 int main()
 {
@@ -129,10 +131,10 @@ int main()
 	/* ------------------------------------------ */
 
 	/* ------------ Loop - Do while ------------- */
-	char s[MAXLINE];
+	/*char s[MAXLINE];
 	for (int i = 0; i < MAXLINE; ++i) {
 		s[i] = '\0';
-	}
+	}*/
 	//char bin[] = "10010111001101011110110001011111";
 	/*itoa_2(-2147483648, s); // This version itoa Can not process the largest negative number 2^(32 - 1) why ?
 	itoa_2(-2147483645, s);*/
@@ -145,8 +147,17 @@ int main()
 	//convertHexal(3987, s);
 	//printf("%s\n", s);
 
-	itoa3_6(98745, s, 15);
+	//itoa3_6(98745, s, 15);
 	/* ------------------------------------------ */
+
+	/* -------- Break And Continue --------------- */
+	// int trim(char s[]);
+	//void processNonNegative(int a[]);
+	/* ------------------------------------------- */
+
+	/* --------- Goto and label---------------- */
+	
+	/* ---------------------------------------- */
 
     return 0;
 }
@@ -250,5 +261,29 @@ void reverse(char s[]) {
 
 		// Or
 		c = s[j], s[j] = s[i], s[i] = c;
+	}
+}
+
+int trim(char s[]) {
+	int n;
+
+	for (n = strlen(s) - 1; n >= 0; n--) {
+		if (s[n] == ' ' && s[n] == '\n' && s[n] == '\t') {
+			break;
+		}
+	}
+	s[n + 1] = '\0';
+	return n;
+}
+
+void processNonNegative(int a[]) {
+	int length;
+	for (int i = 0; i < length; i++) {
+		if (a[i] > 0) {
+			continue;
+		}
+		else {
+			//do something ........
+		}
 	}
 }
